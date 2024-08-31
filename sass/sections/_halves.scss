@@ -1,0 +1,72 @@
+.halves {
+    position: relative;
+    width: 100%;
+    color: $black-color;
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .image_right & {
+            flex-direction: row-reverse;
+        }
+
+        &-image {
+            width: 50%;
+            height: 30rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            // img {object-fit: cover;}
+        }
+
+        &-read {
+            width: 50%;
+            // padding: 4rem;
+
+            &.left {
+                text-align: left;
+            }
+            &.center {
+                text-align: center;
+
+                .button {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            &.right {
+                text-align: right;
+
+                .button {
+                    margin-left: auto;
+                }
+            }
+
+            &--box {
+                padding: 4rem;
+
+                .halves-title {
+                    font-size: 4rem;
+                }
+            
+                .halves-desc {
+                    margin: 1rem 0;
+                    font-size: 1.2rem;
+                    line-height: 30px;
+                    font-weight: 300;
+                }
+            
+                .halves-button {
+                    margin: 1.2rem 0 0;
+                }
+            }
+            
+        }
+    }
+
+   
+}

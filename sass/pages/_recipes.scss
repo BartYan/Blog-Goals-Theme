@@ -1,0 +1,61 @@
+//RECIPES FILTER SECTION
+#filter {
+  margin: 1rem 0 0 0;
+  text-align: center;
+  padding: 0;
+}
+
+.filter_item {
+  display: inline-block;
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
+  &-link {
+    padding: 20px;
+    outline: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    // color: $navyBlue-color;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  &-link:hover {
+    color: $orange-color;
+  }
+  .tag-active {
+    color: $orange-color !important;
+  }
+}
+
+//row for recipes & posts cards
+.posts_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto 50px auto;
+  padding: 0;
+  width: 90%;
+  order: 1;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+//RECIPES FILTER SECTION THE END
+
+.fade__posts {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+}
+
+
+
+
+

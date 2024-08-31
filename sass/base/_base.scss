@@ -1,0 +1,79 @@
+html {
+	scroll-behavior: smooth;
+	margin: 0px !important;
+}
+
+body {
+	position: relative;
+	width: 100% !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	overflow-x: hidden;
+	font-family: $font;
+	color: $imperial-color;
+	box-sizing: border-box;
+	font-size: 16px;
+	min-height: 100vh;
+}
+
+.section {
+	width: 80%;
+	max-width: 1920px;
+	margin: 0 auto;
+
+	&__full {
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+	}
+
+	&__title {
+		font-size: 4rem;
+		color: $black-color;
+		
+		&.text-center {
+			text-align: center;
+		}
+	}
+}
+
+.mt-2 {
+	margin-top: 2rem;
+}
+
+.button {
+	display: block;
+	width: fit-content;
+	padding: 1rem 2rem;
+	background: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #000;
+	text-decoration: none;
+	border: 2px solid #fff;
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+		background: transparent;
+		color: #fff;
+	}
+
+	&-filled {
+		border: 2px solid #000;
+
+		&:hover {
+			background: #000;
+			color: #fff;
+		}
+	}
+}
+
+.mobile-flex {display: none!important;}
+.desktop-flex {display: flex!important;}
+.desktop { display: block!important;}
+
+@media only screen and (max-width: 1024px) {
+	.mobile-flex {display: flex!important;}
+	.desktop-flex {display: none!important;}
+	.desktop {display: none!important;}
+}

@@ -1,0 +1,25 @@
+  .input_container-submit {
+    position: absolute;
+    bottom: -40px;
+    right:0;
+    left: 0;
+    margin: 0 auto 0 auto;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+  }
+
+  .input_container-submit:hover {
+    color: $orange-color;
+  }
+
+  .input_container-submit:focus {
+    outline: none;
+    border: none;
+  }

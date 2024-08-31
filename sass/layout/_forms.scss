@@ -1,0 +1,176 @@
+// /*INPUT FORM CSS */
+// .input_container {
+// 	position: relative;
+// 	padding: 0;
+// 	margin-top: 20px;
+
+// 	&-label {
+// 		display: inline-block;
+// 		font-size: 18px;
+// 		font-weight: bold;
+// 		padding: 20px 0 0 20px;
+// 		text-align: center;
+// 	}
+
+// 	//fieldset styles
+// 	fieldset {
+// 		position: relative;
+// 		max-width: 600px;
+// 		border: none;
+// 	}
+
+// 	input {
+// 		-moz-appearance: none;
+// 		/* older firefox */
+// 		-webkit-appearance: none;
+// 		/* safari, chrome, edge and ie mobile */
+// 		appearance: none;
+// 		/* rest */
+// 	}
+
+// 	&-field {
+// 		width: 50%;
+// 		height: 40px;
+// 		border: none;
+// 		border-bottom: 2px solid $lightGrey-color;
+// 		//transition: all 0.5s ease-in-out;
+// 		outline: none;
+// 		margin-left: 25px;
+// 		padding: 0 0 0 25px;
+// 		font-family: $font;
+// 	}
+
+// 	&-field:focus {
+// 		border: none;
+// 		border-bottom: 3px solid $navyBlue-color;
+// 	}
+
+// 	&-btn {
+// 		position: absolute;
+// 		bottom: 2px;
+// 		left: 0px;
+// 		width: 40px;
+// 		height: 40px;
+// 		border: 4px solid $navyBlue-color;
+// 		border-radius: 50%;
+// 		margin-left: 5px;
+// 		//transition: all 1s ease-in;
+// 		background-color: white;
+// 		cursor: pointer;
+
+// 		&--img {
+// 			width: 21px;
+// 			height: 21px;
+// 			padding: 5px;
+// 			float: left;
+// 		}
+
+// 		&--text {
+// 			display: none;
+// 			color: $navyBlue-color;
+// 			font-weight: bold;
+// 			text-transform: uppercase;
+// 			padding: 8px 8px 0 0;
+// 		}
+// 	}
+
+// 	&-btn:active {
+// 		margin-bottom: -5px;
+// 	}
+
+// 	&-btn:focus {
+// 		outline: none;
+// 	}
+// }
+
+// /* class added in buttonRoller.js */
+// .input-animate {
+// 	-webkit-animation: spin 0.7s linear, moveLeftToRight 1s linear;
+// 	/* Safari 4+ */
+// 	-moz-animation: spin 0.7s linear, moveLeftToRight 1s linear;
+// 	/* Fx 5+ */
+// 	-o-animation: spin 0.7s linear, moveLeftToRight 1s linear;
+// 	/* Opera 12+ */
+// 	-ms-animation: spin 0.7s linear, moveLeftToRight 1s linear;
+// 	/*IE11 & Microsoft Edge*/
+// 	animation: spin 0.7s linear, moveLeftToRight 1s linear;
+// 	/* IE 10+, Fx 29+ */
+// 	-webkit-animation-fill-mode: forwards;
+// 	/* Safari 4+ */
+// 	-moz-animation-fill-mode: forwards;
+// 	/* Fx 5+ */
+// 	-o-animation-fill-mode: forwards;
+// 	/* Opera 12+ */
+// 	-ms-animation-fill-mode: forwards;
+// 	/*IE11 & Microsoft Edge*/
+// 	animation-fill-mode: forwards;
+// 	/* IE 10+, Fx 29+ */
+// }
+
+// /*INPUT FORM CSS THE END*/
+
+
+// // newsletter box
+// .cta {
+// 	display: block;
+// 	padding: 10px 50px;
+// 	background-color: $navyBlue-color;
+// 	color: white;
+// 	font-size: 18px;
+// 	// font-weight: bold;
+// 	border: none;
+// 	margin: 2rem auto;
+// 	cursor: pointer;
+// 	font-family: $font;
+// 	transition: all 0.2s ease-in-out;
+// 	border-radius: 25px 25px 25px 0;
+// }
+// .cta:hover {
+// 	background-color: $red-pastel;
+// 	border-radius: 25px 0 25px 25px;
+// }
+// .newsOverlay {
+// 	position: absolute;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	background-color: rgba(54, 56, 150, 0.5);
+// 	transition: all 0.3s ease-in-out;
+// 	z-index: 1000;
+
+// 	// animation after button click
+// 	opacity: 0;
+// 	visibility: hidden;
+// }
+// .newsBox {
+// 	position: fixed;
+// 	left: 50%;
+//     top: 50%;
+//     transform: translate(-50%,-50%);
+// 	background-color: white;
+// 	z-index: 1001;
+// 	width:fit-content;
+// 	height:fit-content;
+// 	padding: 3rem;
+// }
+// .newsBox_close {
+// 	width: 25px;
+// 	height: 25px;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+
+// 	position: absolute;
+// 	top: 5px;
+// 	right: 5px;
+// 	border-radius: 50%;
+// 	padding-bottom: 2px;
+// 	border: 1px solid black;
+// 	background-color: #fff;
+// 	cursor: pointer;
+// }
+// .newsOverlayShow {
+// 	// animation after button click
+// 	opacity: 1;
+// 	visibility: visible;
+// }

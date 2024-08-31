@@ -1,0 +1,43 @@
+@mixin bg-pattern {
+	background-image: url("../img/svg/food_pattern.svg");
+	background-repeat: cover;
+	background-size: 25%;
+	width: 100%;
+	height: fit-content;
+	padding: 5rem 0;
+
+	&.patternNewsletter {
+		background-image: url("../img/svg/food_pattern_black.svg")
+	}
+	&.patternBox__blue {
+		background-image: url("../img/svg/food_pattern_blue.svg")
+	}
+}
+
+@mixin centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	/* Safari 4+ */
+	-moz-transform: translate(-50%, -50%);
+	/* Fx 5+ */
+	-o-transform: translate(-50%, -50%);
+	/* Opera 12+ */
+	-ms-transform: translate(-50%, -50%);
+	/*IE11 & Microsoft Edge*/
+	transform: translate(-50%, -50%);
+	/* IE 10+, Fx 29+ */
+	z-index: 9;
+}
+
+@mixin centerBlock {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin stars {
+	width: 80px;
+	margin-top: 15px;
+}
