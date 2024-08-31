@@ -9,7 +9,7 @@
   <?php if( have_rows('flexible_content') ): ?>
       <?php while ( have_rows('flexible_content') ) : the_row(); ?>
 
-          <?php if( get_row_layout() == 'hero' ): ?>
+            <?php if( get_row_layout() == 'hero' ): ?>
               <?php 
                 $bgImage = get_sub_field('background_image');
                 $bgColor = get_sub_field('background_color');
@@ -48,8 +48,37 @@
                     <?php echo $section_title; ?>
                 </h2>
               </section>
-              
 
+            <?php elseif( get_row_layout() == 'cards_section' ): ?>
+              <?php 
+                $cards = get_sub_field('cards');
+              ?>
+              <section class="section__full cards" style="">
+                  <div class="cards__content">
+                    <?php if ($cards): ?>
+                        <?php foreach ($cards as $card): ?>
+                            <div class="card">
+                                <?php if (!empty($card['title'])): ?>
+                                    <h2 class="card__title"><?php echo esc_html($card['title']); ?></h2>
+                                <?php endif; ?>
+                                <?php if (!empty($card['image'])): ?>
+                                    <a href="<?php echo esc_url($card['button']['url']); ?>" class="card__image">
+                                        <img src="<?php echo esc_url($card['image']['url']); ?>" alt="<?php echo esc_attr($card['image']['alt']); ?>">
+                                    </a>
+                                <?php endif; ?>
+                               
+                                <?php if (!empty($card['desc'])): ?>
+                                    <p class="card__desc"><?php echo esc_html($card['desc']); ?></p>
+                                <?php endif; ?>
+                                <?php if (!empty($card['button'])): ?>
+                                    <a href="<?php echo esc_url($card['button']['url']); ?>" class="button button-filled card__button"><?php echo esc_html($card['button']['title']); ?></a>
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                  </div>
+              </section>
+              
             <?php elseif( get_row_layout() == 'icon_cards_section' ): ?>
               <?php 
                 $cards = get_sub_field('cards');
@@ -81,66 +110,50 @@
                   </div>
               </section>
               
-            <?php elseif( get_row_layout() == 'cards_section' ): ?>
+            <?php elseif( get_row_layout() == 'subject__posts_section' ): ?>
               <?php 
-                $cards = get_sub_field('cards');
+                $subjectPosts = get_sub_field('subject_posts');
               ?>
-              <section class="section__full cards" style="">
-                  <div class="cards__content">
-                    <?php if ($cards): ?>
-                        <?php foreach ($cards as $card): ?>
-                            <div class="card">
-                                <?php if (!empty($card['title'])): ?>
-                                    <h2 class="card__title"><?php echo esc_html($card['title']); ?></h2>
+              <section class="section__full postcards" style="">
+                  <div class="postcards__content">
+                    <?php if ($subjectPosts): ?>
+                        <?php foreach ($subjectPosts as $post): ?>
+                            <!-- <?php var_dump($post); ?> -->
+                            <?php $heroImage = get_field('hero_img', $post->ID); ?>
+                            <!-- <?php var_dump($heroImage); ?> -->
+                            
+                            <div class="postcard">
+                                <?php if (!empty($heroImage)): ?>
+                                    <img class="postcard__img" src="<?php echo esc_url($heroImage['url']); ?>" alt="<?php echo esc_attr($heroImage['alt']); ?>">
                                 <?php endif; ?>
-                                <?php if (!empty($card['image'])): ?>
-                                    <a href="<?php echo esc_url($card['button']['url']); ?>" class="card__image">
-                                        <img src="<?php echo esc_url($card['image']['url']); ?>" alt="<?php echo esc_attr($card['image']['alt']); ?>">
-                                    </a>
-                                <?php endif; ?>
-                               
-                                <?php if (!empty($card['desc'])): ?>
-                                    <p class="card__desc"><?php echo esc_html($card['desc']); ?></p>
-                                <?php endif; ?>
-                                <?php if (!empty($card['button'])): ?>
-                                    <a href="<?php echo esc_url($card['button']['url']); ?>" class="button button-filled card__button"><?php echo esc_html($card['button']['title']); ?></a>
-                                <?php endif; ?>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                  </div>
-              </section>
-            
-            <?php elseif( get_row_layout() == 'postcards_section' ): ?>
-              <?php 
-                $cards = get_sub_field('cards');
-              ?>
-              <section class="section__full cards" style="">
-                  <div class="cards__content">
-                    <?php if ($cards): ?>
-                        <?php foreach ($cards as $card): ?>
-                            <div class="card">
-                                <?php if (!empty($card['title'])): ?>
-                                    <h2 class="card__title"><?php echo esc_html($card['title']); ?></h2>
-                                <?php endif; ?>
-                                <?php if (!empty($card['image'])): ?>
-                                    <a href="<?php echo esc_url($card['button']['url']); ?>" class="card__image">
-                                        <img src="<?php echo esc_url($card['image']['url']); ?>" alt="<?php echo esc_attr($card['image']['alt']); ?>">
-                                    </a>
-                                <?php endif; ?>
-                               
-                                <?php if (!empty($card['desc'])): ?>
-                                    <p class="card__desc"><?php echo esc_html($card['desc']); ?></p>
-                                <?php endif; ?>
-                                <?php if (!empty($card['button'])): ?>
-                                    <a href="<?php echo esc_url($card['button']['url']); ?>" class="button button-filled card__button"><?php echo esc_html($card['button']['title']); ?></a>
-                                <?php endif; ?>
+                                <div class="postcard__content">
+                                    <div class="postcard__content-text">
+                                        <?php if (!empty($post->post_title)): ?>
+                                            <h2 class="postcard__title"><?php echo $post->post_title; ?></h2>
+                                        <?php endif; ?>
+                                        <?php if (!empty($post->post_excerpt)): ?>
+                                            <p class="postcard__desc"><?php echo $post->post_excerpt; ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="postcard__content-tags">
+                                        <?php 
+                                        $tags = get_the_terms($post->ID, 'topic-type');
+                                        if ($tags && !is_wp_error($tags)): ?>
+                                            <ul>
+                                                <?php foreach ($tags as $tag): ?>
+                                                    <li class="postcard__tag"><?php echo esc_html($tag->name); ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                   </div>
               </section>
 
+            
             <?php elseif( get_row_layout() == 'half_and_half' ): ?>
               <?php
                 $halfLayout = get_sub_field('layout_position');

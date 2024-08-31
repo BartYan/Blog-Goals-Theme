@@ -1,45 +1,43 @@
 <?php 
 
-    add_action('init', 'bloggoals_init_posttypes');
+add_action('init', 'bloggoals_init_posttypes');
     
-    function bloggoals_init_posttypes(){
-        
-        
-        /*
-         * Register Topics Post Type
-         */
-        $recipes_args = array(
-            'labels' => array(
-                'name' => 'Posty Tematyczne',
-                'singular_name' => 'Posty Tematyczne',
-                'all_items' => 'Wszystkie Posty Tematyczne',
-                'add_new' => 'Dodaj nowy post tematyczny',
-                'add_new_item' => 'Dodaj nowy post tematyczny',
-                'edit_item' => 'Edytuj post tematyczny',
-                'new_item' => 'Nowy post tematyczny',
-                'view_item' => 'Zobacz post tematyczny',
-                'search_items' => 'Szukaj w postach tematycznych',
-                'not_found' =>  'Nie znaleziono żadnych postów tematyczny',
-                'not_found_in_trash' => 'Nie znaleziono żadnych postów tematyczny w koszu', 
-                'parent_item_colon' => ''
-            ),
-            'public' => true,
-            'publicly_queryable' => true,
-            'show_ui' => true, 
-            'query_var' => true,
-            'rewrite' => true,
-            'capability_type' => 'post',
-            'hierarchical' => false,
-            'menu_position' => 5,
-            'supports' => array(
-                'title','editor','author','thumbnail','excerpt','comments','custom-fields'
-            ),
-            'has_archive' => true           
-        );
-        
-        register_post_type('topics', $recipes_args);
-
-    }
+function bloggoals_init_posttypes(){
+    
+    /*
+     * Register Topics Post Type
+     */
+    $topics_args = array(
+        'labels' => array(
+            'name' => 'Posty Tematyczne',
+            'singular_name' => 'Posty Tematyczne',
+            'all_items' => 'Wszystkie Posty Tematyczne',
+            'add_new' => 'Dodaj nowy post tematyczny',
+            'add_new_item' => 'Dodaj nowy post tematyczny',
+            'edit_item' => 'Edytuj post tematyczny',
+            'new_item' => 'Nowy post tematyczny',
+            'view_item' => 'Zobacz post tematyczny',
+            'search_items' => 'Szukaj w postach tematycznych',
+            'not_found' =>  'Nie znaleziono żadnych postów tematycznych',
+            'not_found_in_trash' => 'Nie znaleziono żadnych postów tematycznych w koszu', 
+            'parent_item_colon' => ''
+        ),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true, 
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'supports' => array(
+            'title','editor','author','thumbnail','excerpt','comments','custom-fields'
+        ),
+        'has_archive' => true           
+    );
+    
+    register_post_type('topics', $topics_args);
+}
 
     
     add_action('init', 'bloggoals_init_taxonomies');

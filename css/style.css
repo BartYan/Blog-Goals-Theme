@@ -745,64 +745,66 @@ header {
 .postcards__content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 80%;
-  max-width: 1024px;
   margin: 0 auto;
   padding: 2rem 0;
 }
-.postcards__content .card {
-  width: 33%;
-  max-width: 350px;
+.postcards__content .postcard {
+  width: 48%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 5%;
+  margin: 1rem 0;
+  text-align: left;
+  border: 2px solid #000;
 }
-.cards-icons .postcards__content .card {
-  max-width: 250px;
-}
-.postcards__content .card__image {
-  width: 100%;
-  height: 20rem;
+.postcards__content .postcard__img {
+  height: 100%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.cards-icons .postcards__content .card__image {
-  height: auto;
-}
-.postcards__content .card__image img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  margin: 0 0 1rem;
 }
-.cards-icons .postcards__content .card__image img {
-  width: 25%;
-  height: auto;
-}
-.postcards__content .card__content {
+.postcards__content .postcard__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 7rem;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1rem;
 }
-.postcards__content .card__title {
-  margin: 0 0 1rem;
+.postcards__content .postcard__content-text {
+  padding: 1rem 0;
+}
+.postcards__content .postcard__content-tags ul {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  list-style-type: none;
+  padding: 0 0 1rem;
+}
+.postcards__content .postcard__content-tags ul .postcard__tag {
+  font-size: 0.5rem;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0.5rem 0 0;
+  padding: 0.3rem 0.7rem;
+  border-radius: 25px;
+  background-color: #000000;
+  color: #fff;
 }
-.cards-icons .postcards__content .card__title {
-  margin: 0;
-  text-transform: lowercase;
-  font-size: 1.5rem;
+.postcards__content .postcard__title {
+  margin: 0 0 0.5rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #000000;
 }
-.postcards__content .card__desc {
-  margin: 1rem 0 2rem;
+.postcards__content .postcard__desc {
+  color: #576574;
+  font-size: 0.9rem;
 }
 
 .halves {
@@ -873,7 +875,7 @@ body {
   padding: 0px !important;
   overflow-x: hidden;
   font-family: "helvetica";
-  color: #222f3e;
+  color: #000000;
   box-sizing: border-box;
   font-size: 16px;
   min-height: 100vh;
