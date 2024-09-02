@@ -751,12 +751,12 @@ header {
   padding: 2rem 0;
 }
 .postcards__content .postcard {
-  width: 48%;
+  width: 49%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin: 1rem 0;
+  margin: 1.5rem 0 0;
   text-align: left;
   border: 2px solid #000;
 }
@@ -772,6 +772,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   height: 100%;
   padding: 0 1rem;
 }
@@ -790,7 +791,7 @@ header {
   font-size: 0.5rem;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 0 0.5rem 0 0;
+  margin: 0 0 0 0.5rem;
   padding: 0.3rem 0.7rem;
   border-radius: 25px;
   background-color: #000000;
@@ -798,7 +799,7 @@ header {
 }
 .postcards__content .postcard__title {
   margin: 0 0 0.5rem;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   color: #000000;
 }

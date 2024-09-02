@@ -110,17 +110,15 @@
                   </div>
               </section>
               
-            <?php elseif( get_row_layout() == 'subject__posts_section' ): ?>
+            <?php elseif( get_row_layout() == 'subject_posts_section' ): ?>
               <?php 
                 $subjectPosts = get_sub_field('subject_posts');
               ?>
-              <section class="section__full postcards" style="">
+              <section class="section__full postcards">
                   <div class="postcards__content">
                     <?php if ($subjectPosts): ?>
                         <?php foreach ($subjectPosts as $post): ?>
-                            <!-- <?php var_dump($post); ?> -->
                             <?php $heroImage = get_field('hero_img', $post->ID); ?>
-                            <!-- <?php var_dump($heroImage); ?> -->
                             
                             <div class="postcard">
                                 <?php if (!empty($heroImage)): ?>
@@ -141,6 +139,56 @@
                                         if ($tags && !is_wp_error($tags)): ?>
                                             <ul>
                                                 <?php foreach ($tags as $tag): ?>
+                                                    <li class="postcard__tag"><?php echo $tag->name; ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                  </div>
+              </section>
+
+              <?php elseif( get_row_layout() == 'blog_posts_section' ): ?>
+              <?php 
+                $checkBlogPosts = get_sub_field('blog_posts');
+
+                $blogPosts = get_posts(array(
+                    'posts_per_page' => 4,
+                    'post_type' => 'post',
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                ));
+              ?>
+              <section class="section__full postcards">
+                  <div class="postcards__content">
+                  <?php if ($checkBlogPosts && $blogPosts): ?>
+
+                        <?php foreach ($blogPosts as $post): ?>
+                            <?php $heroImage = get_field('hero_img', $post->ID); ?>
+                            
+                            <div class="postcard">
+                                <?php if (!empty($heroImage)): ?>
+                                    <img class="postcard__img" src="<?php echo esc_url($heroImage['url']); ?>" alt="<?php echo esc_attr($heroImage['alt']); ?>">
+                                <?php endif; ?>
+                                <div class="postcard__content">
+                                    <div class="postcard__content-text">
+                                        <?php if (!empty($post->post_title)): ?>
+                                            <h2 class="postcard__title"><?php echo $post->post_title; ?></h2>
+                                        <?php endif; ?>
+                                        <?php if (!empty($post->post_excerpt)): ?>
+                                            <p class="postcard__desc"><?php echo $post->post_excerpt; ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="postcard__content-tags">
+                                        <?php 
+                                        $tags = get_the_terms($post->ID, 'post_tag'); // Pobieranie tagów z domyślnej taksonomii 'post_tag'
+                                        if ($tags && !is_wp_error($tags)): ?>
+                                            <ul>
+                                                <?php foreach ($tags as $tag): ?>
                                                     <li class="postcard__tag"><?php echo esc_html($tag->name); ?></li>
                                                 <?php endforeach; ?>
                                             </ul>
@@ -149,6 +197,7 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
+                        <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
                   </div>
               </section>

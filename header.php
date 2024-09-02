@@ -17,7 +17,7 @@
 
   <!--CSS -->
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?19">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?21">
   
   <!--FONTS-->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
