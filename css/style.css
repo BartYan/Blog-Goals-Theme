@@ -11,6 +11,62 @@ header {
   z-index: 100;
 }
 
+.footer {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+}
+.footer__top {
+  width: 100%;
+  display: flex;
+}
+.footer__top-nav {
+  width: 100%;
+  display: flex;
+}
+.footer__top-nav--items .menu {
+  display: flex;
+  list-style-type: none;
+  padding: 2rem;
+}
+.footer__top-nav--items .menu .menu-item {
+  color: #fff;
+}
+.footer__top-nav--items .menu .menu-item a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 1rem 0 0;
+}
+.footer__top-nav--social ul {
+  display: flex;
+  list-style-type: none;
+  padding: 2rem;
+}
+.footer__top-nav--social ul li {
+  color: #fff;
+}
+.footer__top-nav--social ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 0 0 1rem;
+}
+.footer__bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: #8D8D8D;
+}
+.footer__bottom-link {
+  text-decoration: none;
+  color: #fff;
+}
+.footer__bottom-link:hover {
+  color: #ff6b6b;
+}
+
 .menu-image {
   width: 20px; /* Ustaw szerokość obrazu */
   height: auto;

@@ -6,8 +6,8 @@
   <meta charset="<?php bloginfo('charset') ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <?php if(is_search()): ?>
-    <meta name="robots" content="noindex, nofollow"/>
+  <?php if (is_search()): ?>
+    <meta name="robots" content="noindex, nofollow" />
   <?php endif; ?>
 
   <!-- SLICK -->
@@ -17,8 +17,8 @@
 
   <!--CSS -->
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?21">
-  
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?25">
+
   <!--FONTS-->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
@@ -67,31 +67,31 @@
 
       <!--DESKTOP NAV-->
       <div class="nav__logo">
-          <?php
-            // Pobierz lokalizacje menu
-            $locations = get_nav_menu_locations();
-          
-            // Sprawdź, czy lokalizacja 'main_nav' istnieje
-            if (isset($locations['main_nav'])) {
-                // Pobierz obiekt menu
-                $menu = get_term($locations['main_nav'], 'nav_menu');
-                
-                // Pobierz wartość niestandardowego pola ACF przypisanego do menu
-                $logo = get_field('logo', $menu);
-                
-                if ($logo): ?>
-                    <a href="<?php echo home_url(); ?>" class="nav__logo-link">
-                        <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="nav__logo-img">
-                    </a>
-                <?php endif;
-            }
-          ?>
+        <?php
+        // Pobierz lokalizacje menu
+        $locations = get_nav_menu_locations();
+
+        // Sprawdź, czy lokalizacja 'main_nav' istnieje
+        if (isset($locations['main_nav'])) {
+          // Pobierz obiekt menu
+          $menu = get_term($locations['main_nav'], 'nav_menu');
+
+          // Pobierz wartość niestandardowego pola ACF przypisanego do menu
+          $logo = get_field('logo', $menu);
+
+          if ($logo): ?>
+            <a href="<?php echo home_url(); ?>" class="nav__logo-link">
+              <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="nav__logo-img">
+            </a>
+        <?php endif;
+        }
+        ?>
       </div>
       <div class="nav__items">
-          <?php wp_nav_menu(array(
-              'theme_location' => 'main_nav',
-          )); ?>
-          <!-- <php wp_nav_menu(array(
+        <?php wp_nav_menu(array(
+          'theme_location' => 'main_nav',
+        )); ?>
+        <!-- <php wp_nav_menu(array(
             'name' => 'Menu Główne'
           )); ?> -->
       </div>
