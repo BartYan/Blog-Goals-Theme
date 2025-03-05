@@ -1,79 +1,107 @@
 .postcards {
-    width: 100%;
+  width: 100%;
 
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 80%;
-        margin: 0 auto;
-        padding: 2rem 0;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
 
-        .postcard {
-            width: 49%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            margin: 1.5rem 0 0;
-            text-align: left;
-            border: 2px solid #000;
+    .postcard {
+      width: 49%;
+      min-height: 225px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 1.5rem 0 0;
+      text-align: left;
+      border: 2px solid #000;
 
-            &__img {
-                height: 100%;
-                width: 40%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                object-fit: cover;
-            }
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        min-height: 180px;
+      }
+      @media (max-width: 480px) {
+        flex-direction: column;
+      }
 
-            &__content {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 100%;
-                height: 100%;
-                padding: 0 1rem;
+      &__left {
+        height: 100%;
+        width: 40%;
 
-                &-text {
-                    padding: 1rem 0;
-                }
-
-                &-tags {
-                    ul {
-                        width: 100%;
-                        display: flex;
-                        align-items: flex-end;
-                        justify-content: right;
-                        list-style-type: none;
-                        padding: 0 0 1rem;
-
-                        .postcard__tag {
-                            font-size: 0.5rem;
-                            text-transform: uppercase;
-                            font-weight: 600;
-                            margin: 0 0 0 0.5rem;
-                            padding: 0.3rem 0.7rem;
-                            border-radius: 25px;
-                            background-color: $black-color;
-                            color: $color-white;
-                        }
-                    }
-                }
-            }
-
-            &__title {
-                margin: 0 0 0.5rem;
-                font-size: 2rem;
-                text-transform: uppercase;
-                color: $black-color;
-            }
-
-            &__desc {
-               color: $fuel-color;
-               font-size: 0.9rem;
-            }
+        @media (max-width: 480px) {
+          height: 100%;
+          width: 100%;
         }
+      }
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 60%;
+        height: 100%;
+        padding: 0 1rem;
+
+        @media (max-width: 480px) {
+          width: 90%;
+        }
+
+        &-text {
+          padding: 1rem 0;
+        }
+
+        &-tags {
+          ul {
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: right;
+            list-style-type: none;
+            padding: 0 0 1rem;
+
+            .postcard__tag {
+              font-size: 0.5rem;
+              text-transform: uppercase;
+              font-weight: 600;
+              margin: 0 0 0 0.5rem;
+              padding: 0.3rem 0.7rem;
+              border-radius: 25px;
+              background-color: $black-color;
+              color: $color-white;
+            }
+          }
+        }
+      }
+
+      &__title {
+        margin: 0 0 0.5rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: $black-color;
+
+        @media (max-width: 768px) {
+          font-size: 1.4rem;
+        }
+      }
+
+      &__desc {
+        color: $fuel-color;
+        font-size: 0.9rem;
+      }
     }
+  }
 }

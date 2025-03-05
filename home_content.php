@@ -123,7 +123,9 @@
 
                                 <div class="postcard">
                                     <?php if (!empty($heroImage)): ?>
-                                        <img class="postcard__img" src="<?php echo esc_url($heroImage['url']); ?>" alt="<?php echo esc_attr($heroImage['alt']); ?>">
+                                        <div class="postcard__left">
+                                            <img class="postcard__img" src="<?php echo esc_url($heroImage['url']); ?>" alt="<?php echo esc_attr($heroImage['alt']); ?>">
+                                        </div>
                                     <?php endif; ?>
                                     <div class="postcard__content">
                                         <div class="postcard__content-text">
@@ -173,7 +175,9 @@
 
                                 <div class="postcard">
                                     <?php if (!empty($heroImage)): ?>
-                                        <img class="postcard__img" src="<?php echo esc_url($heroImage['url']); ?>" alt="<?php echo esc_attr($heroImage['alt']); ?>">
+                                        <div class="postcard__left">
+                                            <img class="postcard__img" src="<?php echo esc_url($heroImage['url']); ?>" alt="<?php echo esc_attr($heroImage['alt']); ?>">
+                                        </div>
                                     <?php endif; ?>
                                     <div class="postcard__content">
                                         <div class="postcard__content-text">
