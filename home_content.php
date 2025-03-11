@@ -23,7 +23,7 @@
                     <div class="hero__content">
                         <div class="hero__content-read">
                             <?php if (!empty($heroTitle)) : ?>
-                                <h1 class="hero-title"><?php echo $heroTitle; ?></h1>
+                                <h1 class="h1-title"><?php echo $heroTitle; ?></h1>
                             <?php endif; ?>
 
                             <?php if (!empty($heroDesc)) : ?>
@@ -35,6 +35,28 @@
                             <?php endif; ?>
                         </div>
                         <div class="hero__content-img">
+
+                        </div>
+                    </div>
+                </section>
+
+            <?php elseif (get_row_layout() == 'large_text_banner'): ?>
+                <?php
+                $ltbBgColor = get_sub_field('background_color');
+                $ltbTitle = get_sub_field('title');
+                $ltbSmallText = get_sub_field('small_text');
+                $ltbTextColor = get_sub_field('text_color');
+                ?>
+                <section class="section__full ltb" style="background-color:<?php echo $ltbBgColor; ?>;color: <?php echo $ltbTextColor; ?>!important; ">
+                    <div class="ltb__content">
+                        <div class="ltb__content-read">
+                            <?php if (!empty($ltbSmallText)) : ?>
+                                <p class="ltb__small-text"><?php echo $ltbSmallText; ?></p>
+                            <?php endif; ?>
+
+                            <?php if (!empty($ltbTitle)) : ?>
+                                <h2 class="h2-title"><?php echo $ltbTitle; ?></h2>
+                            <?php endif; ?>
 
                         </div>
                     </div>

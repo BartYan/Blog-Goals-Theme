@@ -23,16 +23,6 @@
         width: 100%;
       }
 
-      .hero-title {
-        font-size: 6rem;
-        line-height: 90px;
-
-        @media (max-width: 768px) {
-          font-size: 4rem;
-          line-height: 60px;
-        }
-      }
-
       .hero-desc {
         width: 80%;
         margin: 1rem 0 0;

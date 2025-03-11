@@ -30,6 +30,7 @@ body {
   &__title {
     font-size: 4rem;
     color: $black-color;
+    margin-top: 3rem;
 
     @media (max-width: 480px) {
       font-size: 3rem;
@@ -91,5 +92,25 @@ body {
   }
   .desktop {
     display: none !important;
+  }
+}
+
+.h1-title {
+  font-size: 6rem;
+  line-height: 90px;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+    line-height: 60px;
+  }
+}
+.h2-title {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 90px;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    line-height: 60px;
   }
 }
