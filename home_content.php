@@ -40,6 +40,39 @@
                     </div>
                 </section>
 
+            <?php elseif (get_row_layout() == 'image_and_text'): ?>
+                <?php
+                $imgtxtImage = get_sub_field('image');
+                $imgtxtBgColor = get_sub_field('background_color');
+                $imgtxtTitle = get_sub_field('title');
+                $imgtxtDesc = get_sub_field('description');
+                $imgtxtColor = get_sub_field('text_color');
+                $imgtxtLink = get_sub_field('button');
+                ?>
+                <section class="section__full imgtxt" style="background-color:<?php echo $imgtxtBgColor; ?>;color: <?php echo $imgtxtColor; ?>!important; ">
+                    <div class="imgtxt__content">
+                        <div class="imgtxt__content-image">
+                            <?php if (!empty($imgtxtImage)) : ?>
+                                <img class="imgtxt__content-image--img" src="<?php echo esc_url($imgtxtImage['url']); ?>" alt="<?php echo esc_attr($imgtxtImage['alt']); ?>">
+                            <?php endif; ?>
+                        </div>
+                        <div class="imgtxt__content-read">
+                            <?php if (!empty($imgtxtTitle)) : ?>
+                                <h3 class="section__title"><?php echo $imgtxtTitle; ?></h3>
+                            <?php endif; ?>
+
+                            <?php if (!empty($imgtxtDesc)) : ?>
+                                <p class="imgtxt-desc"><?php echo $imgtxtDesc; ?></p>
+                            <?php endif; ?>
+
+                            <?php if (!empty($imgtxtLink['url']) && !empty($imgtxtLink['title'])) : ?>
+                                <a href="<?php echo $imgtxtLink['url']; ?>" class="imgtxt-button button" target="<?php echo $imgtxtLink['target']; ?>"><?php echo $imgtxtLink['title']; ?></a>
+                            <?php endif; ?>
+                        </div>
+
+                    </div>
+                </section>
+
             <?php elseif (get_row_layout() == 'large_text_banner'): ?>
                 <?php
                 $ltbBgColor = get_sub_field('background_color');
