@@ -40,6 +40,37 @@
                     </div>
                 </section>
 
+            <?php elseif (get_row_layout() == 'highlight_overlay'): ?>
+                <?php
+                $highlightbgImage = get_sub_field('background_image');
+                $highlightbgColor = get_sub_field('overlay_color');
+                $highlightTitle = get_sub_field('title');
+                $highlightDesc = get_sub_field('description');
+                $highlightColor = get_sub_field('text_color');
+                $highlightLink = get_sub_field('button');
+                ?>
+                <section class="section__full hero highlight-overlay" style="background-image: url('<?php echo $highlightbgImage['url'] ?>');background-color:<?php echo $highlightbgColor; ?>;color: <?php echo $highlightColor; ?>!important;">
+                    <span class="highlight-overlay__span" style="background-color:<?php echo $highlightbgColor; ?>;"></span>
+                    <div class="hero__content">
+                        <div class="hero__content-read">
+                            <?php if (!empty($highlightTitle)) : ?>
+                                <h2 class="section__title"><?php echo $highlightTitle; ?></h2>
+                            <?php endif; ?>
+
+                            <?php if (!empty($highlightDesc)) : ?>
+                                <p class="hero-desc"><?php echo $highlightDesc; ?></p>
+                            <?php endif; ?>
+
+                            <?php if (!empty($highlightLink['url']) && !empty($highlightLink['title'])) : ?>
+                                <a href="<?php echo $highlightLink['url']; ?>" class="hero-button button" target="<?php echo $highlightLink['target']; ?>"><?php echo $highlightLink['title']; ?></a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="hero__content-img">
+
+                        </div>
+                    </div>
+                </section>
+
             <?php elseif (get_row_layout() == 'image_and_text'): ?>
                 <?php
                 $imgtxtImage = get_sub_field('image');
