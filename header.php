@@ -43,27 +43,25 @@
   <!--HEADER SECTION-->
   <header>
     <nav class="nav">
-      <!-- <div class="nav_hamburger">
-        <span></span>
-      </div> -->
+
       <!--THE OVERLAY-->
-      <!-- <div id="overlay_menu" class="nav_overlay">
-        <div class="nav_overlay-white">
-          <div class="nav_overlay-content">
-            <php wp_nav_menu(array(
-              'name' => 'Menu Główne'
-            )); ?>
-            <div class="nav_overlay-content--social">
-              <a href="https://www.facebook.com/wyprawiamdobre" class="social_menu-link" target="_blank">
-                <span class="facebook_circle-icon social_menu-link--icon"></span>
-              </a>
-              <a href="https://www.instagram.com/wyprawiamdobre/" class="social_menu-link" target="_blank">
-                <span class="insta_circle-icon social_menu-link--icon"></span>
-              </a>
-            </div>
+      <div id="overlay_menu" class="nav_overlay">
+        <!-- <div class="nav_overlay-white"> -->
+        <div class="nav_overlay-content">
+          <?php wp_nav_menu(array(
+            'name' => 'Menu Główne'
+          )); ?>
+          <div class="nav_overlay-content--social">
+            <a href="https://www.facebook.com/wyprawiamdobre" class="social_menu-link" target="_blank">
+              <span class="facebook_circle-icon social_menu-link--icon"></span>
+            </a>
+            <a href="https://www.instagram.com/wyprawiamdobre/" class="social_menu-link" target="_blank">
+              <span class="insta_circle-icon social_menu-link--icon"></span>
+            </a>
           </div>
         </div>
-      </div> -->
+        <!-- </div> -->
+      </div>
 
       <!--DESKTOP NAV-->
       <div class="nav__logo">
@@ -88,12 +86,18 @@
         ?>
       </div>
       <div class="nav__items">
-        <?php wp_nav_menu(array(
-          'theme_location' => 'main_nav',
-        )); ?>
-        <!-- <php wp_nav_menu(array(
+        <div class="nav__items--desktop">
+          <?php wp_nav_menu(array(
+            'theme_location' => 'main_nav',
+          )); ?>
+          <!-- <php wp_nav_menu(array(
             'name' => 'Menu Główne'
           )); ?> -->
+        </div>
+
+        <div class="nav__items--mobile nav_hamburger">
+          <span></span>
+        </div>
       </div>
 
     </nav>

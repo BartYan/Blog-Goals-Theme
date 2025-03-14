@@ -122,6 +122,134 @@ header {
   text-decoration: none;
   font-size: 1rem;
 }
+.nav__items--desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .nav__items--desktop {
+    display: block;
+  }
+}
+.nav__items--mobile {
+  display: inline-block;
+}
+@media (min-width: 1024px) {
+  .nav__items--mobile {
+    display: none;
+  }
+}
+.nav_hamburger {
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
+  margin: 0 1rem;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  z-index: 100;
+  /* PODSTAWOWA LINIA (ŚRODEK) */
+  /* GÓRNA I DOLNA PSEUDOLINIA (:before, :after) */
+  /* Górna linia ustawiona nad środkową */
+  /* Dolna linia ustawiona pod środkową */
+  /* STAN MENU OTWARTEGO (HAMBURGER -> X) */
+}
+@media (min-width: 1024px) {
+  .nav_hamburger {
+    display: none;
+  }
+}
+.nav_hamburger span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 0.2em;
+  /* Kolor i lekkie zaokrąglenie */
+  background-color: #000;
+  border-radius: 2px;
+  /*
+    Dzięki temu w czasie otwierania menu
+    środkowa linia może zniknąć (dla X)
+  */
+  transition: background-color 0.3s;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+.nav_hamburger span:before,
+.nav_hamburger span:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* Kolor czarny */
+  border-radius: 2px; /* Lekko zaokrąglone rogi */
+  content: "";
+  transition: transform 0.3s;
+}
+.nav_hamburger span:before {
+  transform: translateY(-0.5em);
+}
+.nav_hamburger span:after {
+  transform: translateY(0.5em);
+}
+.nav_hamburger.nav_hamburger-open span {
+  /* Środkowa linia "znika" poprzez kolor tła */
+  background-color: transparent;
+}
+.nav_hamburger.nav_hamburger-open span:before {
+  /* Obrót górnej linii o 45 stopni (ramię X) */
+  transform: rotate(45deg);
+  background: #fff;
+}
+.nav_hamburger.nav_hamburger-open span:after {
+  /* Obrót dolnej linii o -45 stopni (drugie ramię X) */
+  transform: rotate(-45deg);
+  background: #fff;
+}
+.nav_overlay {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.nav_overlay-content {
+  padding: 5rem;
+}
+.nav_overlay-content .menu {
+  display: flex;
+  flex-direction: column;
+}
+.nav_overlay-content .menu-item {
+  display: block;
+  list-style: none;
+  padding: 10px 0;
+  font-size: 2rem;
+  color: #fff;
+}
+.nav_overlay-content .menu-item a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav_overlay-content--social {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.nav_overlay-content--social .social_menu-link {
+  width: 30px;
+  padding: 20px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .comments {
   width: 90%;
