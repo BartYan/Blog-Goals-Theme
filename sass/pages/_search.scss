@@ -1,0 +1,16 @@
+//row for search results / post cards
+.posts_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto 50px auto;
+  padding: 0;
+  width: 90%;
+  order: 1;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+

@@ -11,7 +11,7 @@
       <!-- <span class="section_title-span">Przepis na</span> -->
       <h3 class="section_title-head"><?php the_title(); ?></h3>
       <img class="section_title-stars" src="<?php echo get_stylesheet_directory_uri() ?>/img/svg/icon_stars.svg"
-      alt="ikonka gwiazdek">
+        alt="ikonka gwiazdek">
     </div>
   </div>
 
@@ -29,7 +29,7 @@
       <!-- <span class="section_title-span">Przepis na</span> -->
       <h1 class="section_title-head"><?php the_title(); ?></h1>
       <img class="section_title-stars" src="<?php echo get_stylesheet_directory_uri() ?>/img/svg/icon_stars.svg"
-      alt="ikonka gwiazdek">
+        alt="ikonka gwiazdek">
     </div>
 
     <article class="infoBoxPost_description">
@@ -51,8 +51,8 @@
 </section> -->
 
 <!--Comments-->
-<section>
-  <?php comments_template(); ?>
-</section>
+<!-- <section>
+  <php comments_template(); ?>
+</section> -->
 
 <?php get_footer(); ?>

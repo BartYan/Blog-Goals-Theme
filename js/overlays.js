@@ -33,18 +33,3 @@ hamburger.addEventListener('click', () => {
   overlay();
   open();
 });
-
-//NEWSLETTER OVERLAY
-// let newsBtn = document.querySelectorAll('.cta-news');
-// let newsOverlay = document.querySelector('.newsOverlay');
-// let newsClose = document.querySelector('.newsBox_close');
-
-// newsBtn.forEach((item) => {
-//   item.addEventListener('click', (event) => {
-//     newsOverlay.classList.add('newsOverlayShow');
-//   });
-// });
-
-// newsClose.addEventListener('click', (event) => {
-//   newsOverlay.classList.remove('newsOverlayShow');
-// });

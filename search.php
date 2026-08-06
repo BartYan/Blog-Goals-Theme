@@ -1,7 +1,7 @@
 <?php get_header('center'); ?>
 <!--TOP LEAFs DECORATION-->
 <img class="leaf-left--nav" src="<?php echo get_stylesheet_directory_uri() ?>/img/svg/leaf_left.svg" alt="leaf icon">
-<!--RECIPES SECTION-->
+<!--SEARCH RESULTS SECTION-->
 <section class="cards_section">
   <!-- Title loop -->
   <?php
@@ -56,8 +56,7 @@
     <?php if($loop->have_posts()) :?>
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
-    <!--RECIPE CARD-->
-    <?php include 'recipe-card.php';?>
+    <?php get_template_part('template-parts/post-card'); ?>
 
     <!--THE END of wordpress loop-->
     <?php endwhile; ?>
@@ -70,6 +69,6 @@
   <!--BOTTOM LEAFs DECORATION-->
   <img class="leaf-right" src="<?php echo get_stylesheet_directory_uri() ?>/img/svg/leaf_right.svg" alt="leaf icon">
 </section>
-<!--RECIPE SECTION THE END-->
+<!--SEARCH RESULTS SECTION THE END-->
 
 <?php get_footer(); ?>

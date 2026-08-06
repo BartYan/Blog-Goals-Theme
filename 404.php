@@ -27,23 +27,18 @@
     <h4 class="infoBox_top-head">Chyba coś się wysypało!</h4>
     <p class="infoBox_top-description">
       Strona pod wskazanym adresem Url nie istnieje.
-      <br />Wybierz coś z naszego menu lub przejdź do naszych przepisów <a href="https://wyprawiamdobre.pl/recipes">tutaj</a>.
+      <br />Wybierz coś z naszego menu lub wróć na <a href="<?php echo esc_url(home_url('/')); ?>">stronę główną</a>.
     </p>
   </div>
   <div class="infoBox_bottom">
     <ul class="infoBox_bottom_social">
-      <!-- <li class="infoBox_bottom_social-item">
-        <a class="infoBox_bottom_social-link" href="https://www.tastewithit.com" target="_blank">
-          <img class="infoBox_bottom_social-facebook" src="<?php echo get_stylesheet_directory_uri() ?>/img/uk-large.png" alt="uk">
-        </a>
-      </li> -->
       <li class="infoBox_bottom_social-item">
-        <a class="infoBox_bottom_social-link" href="https://www.facebook.com/wyprawiamdobre" target="_blank">
+        <a class="infoBox_bottom_social-link" href="https://www.facebook.com/bloggoals" target="_blank">
           <img class="infoBox_bottom_social-facebook" src="<?php echo get_stylesheet_directory_uri() ?>/img/facebook_menu.svg" alt="facebook">
         </a>
       </li>
       <li class="infoBox_bottom_social-item">
-        <a class="infoBox_bottom_social-link" href="https://www.instagram.com/wyprawiamdobre/" target="_blank">
+        <a class="infoBox_bottom_social-link" href="https://www.instagram.com/bloggoals" target="_blank">
           <img class="infoBox_bottom_social-insta" src="<?php echo get_stylesheet_directory_uri() ?>/img/instagram_menu.svg" alt="insta">
         </a>
       </li>
@@ -55,7 +50,5 @@
   </div>
 </div>
 </section>
-
-<?php include("sections.php"); ?>
 
 <?php get_footer(); ?>

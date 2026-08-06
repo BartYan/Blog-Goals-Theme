@@ -52,10 +52,10 @@
             'name' => 'Menu Główne'
           )); ?>
           <div class="nav_overlay-content--social">
-            <a href="https://www.facebook.com/wyprawiamdobre" class="social_menu-link" target="_blank">
+            <a href="https://www.facebook.com/bloggoals" class="social_menu-link" target="_blank">
               <span class="facebook_circle-icon social_menu-link--icon"></span>
             </a>
-            <a href="https://www.instagram.com/wyprawiamdobre/" class="social_menu-link" target="_blank">
+            <a href="https://www.instagram.com/bloggoals" class="social_menu-link" target="_blank">
               <span class="insta_circle-icon social_menu-link--icon"></span>
             </a>
           </div>

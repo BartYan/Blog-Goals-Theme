@@ -73,15 +73,12 @@
 <!-- slick carousel -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="<?php echo BLOGGOALS_THEME_URL ?>slick-1.8.1/slick/slick.min.js"></script>
 <script src="<?php echo BLOGGOALS_THEME_URL ?>js/slick-carousel.js?3"></script>
 
 <!--JS-->
 <script src="<?php echo BLOGGOALS_THEME_URL ?>js/cookies.js"></script>
 <script src="<?php echo BLOGGOALS_THEME_URL ?>js/searchRoller.js"></script>
-<!-- <script src="<?php echo BLOGGOALS_THEME_URL ?>js/mailRoller.js"></script> -->
 <script src="<?php echo BLOGGOALS_THEME_URL ?>js/overlays.js"></script>
 <!-- <script src="<?php echo BLOGGOALS_THEME_URL ?>js/carousel.js"></script> -->
 <script src="<?php echo BLOGGOALS_THEME_URL ?>js/backToTopButton.js"></script>

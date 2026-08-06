@@ -25,7 +25,7 @@ if (post_password_required()) {
 
         <?php
 								wp_list_comments(array(
-									'callback' => 'wyprawiamdobre_comment_theme',
+									'callback' => 'bloggoals_comment_theme',
 									'style' => '<div',
 									'avatar_size' => 50
 								));
