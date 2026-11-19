@@ -21,7 +21,7 @@
     <?php if ($latestPosts->have_posts()): ?>
       <?php while ($latestPosts->have_posts()): $latestPosts->the_post(); ?>
         <?php
-        $heroImage = get_field('hero_img');
+        $heroImage = bloggoals_get_image(get_field('hero_img'));
         ?>
 
         <a href="<?php the_permalink(); ?>" class="postcard">

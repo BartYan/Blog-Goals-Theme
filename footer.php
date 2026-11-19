@@ -40,14 +40,17 @@
           foreach ($social_media as $item):
             $name = $item['name'] ?? '';
             $link = $item['link'] ?? '';
-            $image = $item['image'] ?? '';
+            // Pole "link" może być polem ACF typu Link (tablica) lub URL (string)
+            $linkUrl = is_array($link) ? ($link['url'] ?? '') : (string) $link;
+            $linkTarget = (is_array($link) && !empty($link['target'])) ? $link['target'] : '_blank';
+            $image = bloggoals_get_image($item['image'] ?? '');
         ?>
-            <?php if ($name || $image): // Wyświetl tylko jeśli jest obrazek lub tekst 
+            <?php if ($name || $image): // Wyświetl tylko jeśli jest obrazek lub tekst
             ?>
               <li>
-                <a href="<?php echo esc_url($link); ?>" target="_blank">
+                <a href="<?php echo esc_url($linkUrl); ?>" target="<?php echo esc_attr($linkTarget); ?>">
                   <?php if ($image): ?>
-                    <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($name); ?>">
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($name); ?>">
                   <?php endif; ?>
                   <?php if ($name): ?>
                     <?php echo esc_html($name); ?>

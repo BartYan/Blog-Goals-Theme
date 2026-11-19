@@ -98,5 +98,25 @@ add_filter('upload_mimes', 'cc_mime_types');
 @ini_set('max_execution_time', '300');
 @ini_set('max_input_time', '300');
 
+/**
+ * Normalizuje wartość pola obrazka ACF do tablicy ['url' => ..., 'alt' => ...].
+ * ACF może zwrócić tablicę, ID załącznika lub URL (np. gdy w meta posta zapisany
+ * jest klucz nieistniejącego już pola) – zwracamy null, jeśli obrazka brak.
+ */
+function bloggoals_get_image($value)
+{
+    if (is_array($value)) {
+        return !empty($value['url']) ? ['url' => $value['url'], 'alt' => $value['alt'] ?? ''] : null;
+    }
+    if (is_numeric($value)) {
+        $url = wp_get_attachment_image_url((int) $value, 'full');
+        return $url ? ['url' => $url, 'alt' => (string) get_post_meta((int) $value, '_wp_attachment_image_alt', true)] : null;
+    }
+    if (is_string($value) && $value !== '') {
+        return ['url' => $value, 'alt' => ''];
+    }
+    return null;
+}
+
 
 ?>

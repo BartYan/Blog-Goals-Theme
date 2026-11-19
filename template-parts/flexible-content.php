@@ -196,7 +196,7 @@
                 <div class="postcards__content">
                     <?php if ($subjectPosts): ?>
                         <?php foreach ($subjectPosts as $post): ?>
-                            <?php $heroImage = get_field('hero_img', $post->ID); ?>
+                            <?php $heroImage = bloggoals_get_image(get_field('hero_img', $post->ID)); ?>
 
                             <div class="postcard">
                                 <?php if (!empty($heroImage)): ?>
@@ -248,7 +248,7 @@
                     <?php if ($checkBlogPosts && $blogPosts): ?>
 
                         <?php foreach ($blogPosts as $post): ?>
-                            <?php $heroImage = get_field('hero_img', $post->ID); ?>
+                            <?php $heroImage = bloggoals_get_image(get_field('hero_img', $post->ID)); ?>
 
                             <div class="postcard">
                                 <?php if (!empty($heroImage)): ?>
